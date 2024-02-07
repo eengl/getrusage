@@ -226,7 +226,7 @@ int main (int argc, char *argv[])
     }
     if (rss) {
       output.str ("");
-#if defined(__LINUX__) || defined(__linux__)
+#if defined(__LINUX__) || defined(__linux__) || defined(__FreeBSD__)
       // Linux reports ru_maxrss in units of kilobytes (KB).
       output << "Maximum resident set size (in Mbytes):       " << ((double) ru.ru_maxrss) / 1024.;
 #elif defined(__APPLE__)
